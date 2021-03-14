@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <title>코멘토 중고</title>
+ <link rel="stylesheet" type="text/css" href="style_home.css">
+    <style>
+        body {margin: 0px; padding: 0px; background: gray;}
+        .wrap {width: 850px; background: white; margin: 0px auto 0px auto;}
+        header {background: white; width: 850px; height: 80px; text-align: center; padding: 0.1px 0px 0px 0px;}
+        a {text-decoration: none; color: black}
+        nav a:hover {color: gray; border-color: darkgray;}
+        nav {width: 850px; height: 45px; background: lightgray; text-align: center; color: black; padding: 0.1px 0px 0px 0px;}
+        nav li {display: inline; padding: 5px;}
+        nav a {text-decoration: none; color: black; padding: 8px; border-style: hidden hidden solid hidden; border-color: transparent; font-weight: bold}
+        nav a:hover {color: gray; border-color: darkgray;}
+        article {width: 800px; background: white; float: left; padding: 10px;}
+        aside {width: 850px; background: aqua; float: right;}
+        footer {float: bottom; width: 850px; height: 50px;padding: 20px 0px 0px 0px; background: black; color: white; clear: both; text-align: center;}
+    </style>
+</head>
+<body>
+ <div class="wrap">
+  <header>
+      <h1><a href="http://127.0.0.1:8000">코멘토 중고</a></h1>
+  </header>
+  <nav>
+   <ul>
+        <li><a href="http://127.0.0.1:8000/blog">게시판</a></li>
+        <li><a href="">판매하기</a></li>
+        <li><a href="http://127.0.0.1:8000/sellblog/new_get">구매하기</a></li>
+   </ul>
+  </nav>
+  <article>
+      <h1>판매하기</h1>
+    <fieldset>
+    <form method="POST">
+        {% csrf_token %}
+        제품명<br>
+        <input type="text" name="postname" value="판매합니다."><br>
+        제품 설명<br>
+        <textarea rows="20" cols="100" name="contents"></textarea><br>
+        제품가격<br>
+        <input type="text" name="price">원<br>
+        제품 이미지<br>
+        <input type="file" name="mainphoto"><br><br>
+        <input type="submit" value="글쓰기">
+    </form></fieldset>
+
+
+   <iframe name="main_area" src="" seamless="false" align="center" width="700px" height="100px" frameborder="0px" scrolling="no"></iframe>
+
+
+  </article>
+  <aside>
+   <table hidden="440px">
+    <tr>
+     <p align="center">
+      <br>
+      <a href="http://facebook.com">페이스북</a><br><br>
+      <a href="http://twiter.com">트위터</a><br><br>
+      <a href="http://blog.naver.com">블로그</a><br><br>
+      <a href="http://instargram.com">인스타그램</a><br><br>
+     </p>
+    </tr>
+   </table>
+  </aside>
+  <footer>
+   ::: 관리자 이메일 uych0704@naver.com :::
+  </footer>
+ </div>
+</body>
+</html>

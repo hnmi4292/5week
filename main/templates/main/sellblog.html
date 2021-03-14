@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+ <meta charset="UTF-8">
+ <title>코멘토 중고</title>
+ <link rel="stylesheet" type="text/css" href="style_home.css">
+    <style>
+        body {margin: 0px; padding: 0px; background: gray;}
+        .wrap {width: 850px; background: white; margin: 0px auto 0px auto;}
+        header {background: white; width: 850px; height: 80px; text-align: center; padding: 0.1px 0px 0px 0px;}
+        a {text-decoration: none; color: black}
+        nav a:hover {color: gray; border-color: darkgray;}
+        nav {width: 850px; height: 45px; background: lightgray; text-align: center; color: black; padding: 0.1px 0px 0px 0px;}
+        nav li {display: inline; padding: 5px;}
+        nav a {text-decoration: none; color: black; padding: 8px; border-style: hidden hidden solid hidden; border-color: transparent; font-weight: bold}
+        nav a:hover {color: gray; border-color: darkgray;}
+        article {width: 800px; background: white; float: left; padding: 10px;}
+        aside {width: 850px; background: aqua; float: right;}
+        footer {float: bottom; width: 850px; height: 50px;padding: 20px 0px 0px 0px; background: black; color: white; clear: both; text-align: center;}
+    </style>
+</head>
+<body>
+ <div class="wrap">
+  <header>
+      <h1><a href="http://127.0.0.1:8000">코멘토 중고</a></h1>
+  </header>
+  <nav>
+   <ul>
+        <li><a href="http://127.0.0.1:8000/blog">판매 게시판</a></li>
+        <li><a href="http://127.0.0.1:8000/blog/new_post/">판매하기</a></li>
+        <li><a href="http://127.0.0.1:8000/sellblog/">구매 게시판</a></li>
+        <li><a href="http://127.0.0.1:8000/sellblog/new_get">구매하기</a></li>
+   </ul>
+  </nav>
+  <article>
+      <h1>구매게시판</h1>
+        <fieldset>
+
+
+
+        <table>
+        {% for list in productlist %}
+            <ul>
+                <li><a href="{{list.pk}}/">{{list.getname}}</a></li>
+            </ul>
+        {% endfor %}
+        </table>
+        <button><a href="new_get/">글쓰기</a></button>
+            </fieldset>
+
+
+   <iframe name="main_area" src="" seamless="false" align="center" width="700px" height="200px" frameborder="0px" scrolling="no"></iframe>
+
+
+  </article>
+  <aside>
+   <table hidden="440px">
+    <tr>
+     <p align="center">
+      <br>
+      <a href="http://facebook.com">페이스북</a><br><br>
+      <a href="http://twiter.com">트위터</a><br><br>
+      <a href="http://blog.naver.com">블로그</a><br><br>
+      <a href="http://instargram.com">인스타그램</a><br><br>
+     </p>
+    </tr>
+   </table>
+  </aside>
+  <footer>
+   ::: 관리자 이메일 uych0704@naver.com :::
+  </footer>
+ </div>
+</body>
+</html>

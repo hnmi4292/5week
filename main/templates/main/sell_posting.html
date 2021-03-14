@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Posting!</title>
+    </head>
+    <body>
+        <h1>게시글 개별 페이지입니다</h1>
+        <p>제품명: {{product.getname}}</p>
+        <p>제품가격: {{product.hopeprice}}</p>
+        제품이미지<br>
+        {% if product.photo %}
+            <img src = "{{ product.photo.url }}" alt="" height="600">
+            <br>
+        {% endif %}
+        <a href="http://127.0.0.1:8000/sllblog/">목록</a>
+        <a href="http://127.0.0.1:8000/sellblog/{{post.pk}}/remove">삭제</a>
+    </body>
+</html>
